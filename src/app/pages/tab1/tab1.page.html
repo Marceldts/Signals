@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios" *ngIf="!loading">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{numberSignal()}}</ion-card-title>
+      <ion-card-title>Number Signal</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Esta signal es una Writable Signal. Podemos escribir sobre ella directamente
+    </ion-card-content>
+  
+    <ion-button fill="clear" (click)="inc()">Incrementar</ion-button>
+    <ion-button fill="clear" (click)="dec()">Decrementar</ion-button>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{computedNumberSignal()}}</ion-card-title>
+      <ion-card-title>Computed Number Signal</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Esta signal es una Signal (o computed signal). No podemos escribir sobre ella directamente, pero se actualizará cuando cualquier signal del que dependa cambie su valor
+    </ion-card-content>
+  </ion-card>
+  <app-card [signal]="numberSignal"></app-card>
+  <ion-button expand="full" (click)="openDetailsWithState()">
+    Ir a otra página con el mismo signal
+  </ion-button>
+</ion-content>

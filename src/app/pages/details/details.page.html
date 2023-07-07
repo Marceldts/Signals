@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+        <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+      </ion-button>
+      <ion-title>
+        Details
+      </ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding *ngIf="!loading">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{newSignal()}}</ion-card-title>
+      <ion-card-title>Number Signal</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Esta signal es la misma signal que en la pantalla anterior. Podemos escribir sobre ella directamente y se verá reflejado después en el otro lado
+    </ion-card-content>
+  
+    <ion-button fill="clear" (click)="inc()">Incrementar</ion-button>
+    <ion-button fill="clear" (click)="dec()">Decrementar</ion-button>
+  </ion-card>
+</ion-content>

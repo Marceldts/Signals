@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+        <ion-button (click)="goBack()">
+        <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="main" *ngIf="pokemonDetail()">
+    <ion-img src="{{sprite}}" alt="Sprite frontal de {{name}}"></ion-img>
+    <ion-list>
+      <ion-item>
+        Habilidades que puede tener {{name}}:
+      </ion-item> 
+      <ion-item *ngFor="let ability of abilities">
+        <div class="container">
+          <ion-item>Nombre: {{ability.ability.name}}</ion-item>
+          <ion-item>¿Es una habilidad oculta? {{ability.is_hidden}}</ion-item>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        Tipo:
+      </ion-item> 
+      <ion-item *ngFor="let type of types" class="container">
+        {{type.type.name}}
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        Número de {{name}} en la pokedex:
+      </ion-item> 
+      <ion-item>
+        {{id}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

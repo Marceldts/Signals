@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true" mode="ios">
+  <ion-header [translucent]="true">
+    <ion-toolbar>    
+      <ion-title>
+        Tab 2
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="getNewPokemon(-1)" fill="clear" *ngIf="limit > 0">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="getNewPokemon(1)" fill="clear">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+    <ion-list *ngIf="signalsLoaded">
+      <ion-item *ngFor="let pokemon of pokemonList().results" (click)="goToPokeDetail(pokemon.name, pokemon.url)">
+          <ion-text>{{pokemon.name}}</ion-text>
+      </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{signal()}}</ion-card-title>
+    <ion-card-title>Number Signal en hijo</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Esta signal es la misma que la del componente del Tab1, por lo que si cambiamos su valor se cambiará en todos los lados a la vez
+  </ion-card-content>
+  <ion-button fill="clear" (click)="inc()">Incrementar</ion-button>
+  <ion-button fill="clear" (click)="dec()">Decrementar</ion-button>
+</ion-card>

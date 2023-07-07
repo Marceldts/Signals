@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+ion-list {
+    height: fit-content;
+    margin: 0px 5px;
+}
+
+ion-content {
+    height: fit-content;
+}
+
+ion-img {
+    @media (min-width: 768px) {
+        width: 40%;
+    }
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px){
+        flex-direction: row;
+    }
+}
